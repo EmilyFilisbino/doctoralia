@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | Doctoralia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 8px;
+    }
+
+    .logo span {
+      font-weight: bold;
+      font-size: 22px;
+      color: #00b39b;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      background-color: white;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .social-btn img {
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .social-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+      color: #aaa;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: .5em;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: .5em;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .show-password input {
+      margin-right: 6px;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .remember-forgot label {
+      display: flex;
+      align-items: center;
+    }
+
+    .remember-forgot input {
+      margin-right: 6px;
+    }
+
+    .remember-forgot a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056d2;
+    }
+
+    .register {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .register a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="logo">
+      <img src="logo-plain-branded.svg" alt="Doctoralia Logo">
+      <span>Doctoralia</span>
+    </div>
+
+    <h2>Faça login em sua conta</h2>
+
+    <div class="social-btn">
+      <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google logo">
+      Continuar com Google
+    </div>
+
+    <div class="social-btn">
+      <img src="image.png" alt="Apple logo">
+      Continuar com a Apple
+    </div>
+
+    <div class="divider">ou</div>
+
+    <form>
+      <input type="email" placeholder="E-mail" required>
+      <input type="password" placeholder="Senha" required>
+
+      <div class="show-password">
+        <input type="checkbox" onclick="togglePassword()"> Mostrar senha
+      </div>
+
+      <div class="remember-forgot">
+        <label>
+          <input type="checkbox"> Lembrar-me
+        </label>
+        <a href="#">Esqueceu sua senha?</a>
+      </div>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="register">
+      Ainda não tem conta? <a href="#">Faça seu cadastro!</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.querySelector('input[type="password"]');
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações de Acessibilidade</title>
+    <style>
+        /* Reset e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container Principal - estilo Doctoralia */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Cabeçalho - inspirado no Doctoralia */
+        .header {
+            background-color: #00ccb4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Formulário */
+        .form-container {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .select-style {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #fff;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .select-style:focus {
+            outline: none;
+            border-color: #00ccb4;
+            box-shadow: 0 0 0 2px rgba(0, 204, 180, 0.2);
+        }
+
+        /* Subopções - inicialmente escondidas */
+        .suboptions {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #00ccb4;
+        }
+
+        .suboption-item {
+            margin-bottom: 12px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            accent-color: #00ccb4;
+        }
+
+        .checkbox-container label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        /* Tooltip de explicação */
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f9f7;
+            border-radius: 4px;
+            color: #007a6d;
+            font-size: 14px;
+            border-left: 3px solid #00ccb4;
+        }
+
+        /* Botão - estilo Doctoralia */
+        .btn {
+            display: inline-block;
+            background-color: #00ccb4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #00b39b;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Configurações de Acessibilidade</h1>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="deficiency">Selecione sua necessidade de acessibilidade:</label>
+                <select id="deficiency" class="select-style" onchange="showSubOptions()">
+                    <option value="">-- Selecione uma opção --</option>
+                    <option value="visual">Deficiência Visual</option>
+                    <option value="auditiva">Deficiência Auditiva</option>
+                    <option value="motora">Deficiência Motora</option>
+                    <option value="cognitiva">Dificuldades Cognitivas</option>
+                    <option value="">Nenhuma Adaptação Extra</option>
+                </select>
+            </div>
+
+            <!-- Subopções para Deficiência Visual -->
+            <div id="visual-sub" class="suboptions">
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="low-vision" name="visual-option"
+                            onchange="showExplanation('low-vision-exp')">
+                        <label for="low-vision">Baixa Visão</label>
+                    </div>
+                    <div id="low-vision-exp" class="explanation">
+                        O site aumentará o tamanho da fonte e ajustará o contraste para melhor legibilidade.
+                    </div>
+                </div>
+
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="color-blindness" name="visual-option"
+                            onchange="showExplanation('color-blindness-exp')">
+                        <label for="color-blindness">Daltonismo</label>
+                    </div>
+                    <div id="color-blindness-exp" class="explanation">
+                        Ativaremos um filtro de cores adequado ao seu tipo de daltonismo e adicionaremos padrões visuais
+                        além de cores.
+                    </div>
+                </div>
+
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="blindness" name="visual-option"
+                            onchange="showExplanation('blindness-exp')">
+                        <label for="blindness">Cegueira</label>
+                    </div>
+                    <div id="blindness-exp" class="explanation">
+                        Ativaremos o modo de compatibilidade com leitores de tela e garantiremos que todas as imagens
+                        tenham descrições textuais.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subopções para Deficiência Auditiva -->
+            <div id="auditiva-sub" class="suboptions">
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="deafness" name="auditiva-option"
+                            onchange="showExplanation('deafness-exp')">
+                        <label for="deafness">Surdez</label>
+                    </div>
+                    <div id="deafness-exp" class="explanation">
+                        Todas as mídias de áudio e vídeo terão legendas ou transcrições textuais disponíveis.
+                    </div>
+                </div>
+
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="hearing-loss" name="auditiva-option"
+                            onchange="showExplanation('hearing-loss-exp')">
+                        <label for="hearing-loss">Perda Auditiva</label>
+                    </div>
+                    <div id="hearing-loss-exp" class="explanation">
+                        Forneceremos controles para ajustar o volume e a velocidade de reprodução de conteúdos de áudio.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subopções para Deficiência Motora -->
+            <div id="motora-sub" class="suboptions">
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="mouse-difficulty" name="motora-option"
+                            onchange="showExplanation('mouse-difficulty-exp')">
+                        <label for="mouse-difficulty">Dificuldade com Mouse</label>
+                    </div>
+                    <div id="mouse-difficulty-exp" class="explanation">
+                        Aumentaremos as áreas clicáveis e implementaremos confirmação para evitar cliques acidentais.
+                    </div>
+                </div>
+
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="mobility" name="motora-option"
+                            onchange="showExplanation('mobility-exp')">
+                        <label for="mobility">Mobilidade Reduzida</label>
+                    </div>
+                    <div id="mobility-exp" class="explanation">
+                        Ativaremos navegação completa por teclado e atalhos personalizáveis.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subopções para Dificuldades Cognitivas -->
+            <div id="cognitiva-sub" class="suboptions">
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="dyslexia" name="cognitiva-option"
+                            onchange="showExplanation('dyslexia-exp')">
+                        <label for="dyslexia">Dislexia</label>
+                    </div>
+                    <div id="dyslexia-exp" class="explanation">
+                        Aplicaremos uma fonte especial e maior espaçamento entre linhas para facilitar a leitura.
+                    </div>
+                </div>
+
+                <div class="suboption-item">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="adhd" name="cognitiva-option" onchange="showExplanation('adhd-exp')">
+                        <label for="adhd">TDAH</label>
+                    </div>
+                    <div id="adhd-exp" class="explanation">
+                        Reduziremos distrações e destacaremos o conteúdo principal para melhorar o foco.
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-block" onclick="applySettings()">Aplicar Configurações</button>
+        </div>
+    </div>
+
+    <script>
+        function showSubOptions() {
+            // Esconde todas as subopções primeiro
+            document.querySelectorAll('.suboptions').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Mostra apenas as subopções selecionadas
+            const selected = document.getElementById('deficiency').value;
+            if (selected) {
+                document.getElementById(`${selected}-sub`).style.display = 'block';
+            }
+        }
+
+        function showExplanation(id) {
+            // Esconde todas as explicações primeiro
+            document.querySelectorAll('.explanation').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Mostra a explicação correspondente ao checkbox marcado
+            const checkbox = document.getElementById(id.replace('-exp', ''));
+            if (checkbox.checked) {
+                document.getElementById(id).style.display = 'block';
+            }
+        }
+
+        function applySettings() {
+    const deficiency = document.getElementById('deficiency').value;
+
+    // Verifica se a opção "Nenhuma Adaptação Extra" foi selecionada
+    if (deficiency === "") {
+        alert('Ok sem alterações adicionais!');
+        setTimeout(() => {
+            window.location.href = 'entrar.html';
+        }, 3000);
+        return;
+    }
+
+    // Coletar configurações selecionadas
+    const selectedOptions = [];
+    document.querySelectorAll(`input[name="${deficiency}-option"]:checked`).forEach(el => {
+        selectedOptions.push(el.id);
+    });
+
+    if (selectedOptions.length === 0) {
+        alert('Por favor, selecione pelo menos uma opção específica');
+        return;
+    }
+
+    // Mostra o resumo e redireciona após 3 segundos
+    alert(`Configurações aplicadas:\n\nDeficiência: ${
+        document.getElementById('deficiency').options[
+            document.getElementById('deficiency').selectedIndex
+        ].text
+    }\nOpções: ${selectedOptions.join(', ')}`);
+    
+    setTimeout(() => {
+        window.location.href = 'entrar.html';
+    }, 500);
+}
+    </script>
+</body>
+
+</html>

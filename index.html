@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crie uma conta gratuita | Doctoralia</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fcfd;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            padding: 10px 10px;
+            background-color: #f7f7f7;
+            border-bottom: #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00b39b;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login button {
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        main {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border: 2px solid #00ccb4;
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Remove todos os estados de link */
+.card-link:link, 
+.card-link:visited, 
+.card-link:hover, 
+.card-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hover personalizado */
+.card-link:hover .card {
+    transform: translateY(-5px);
+    border: 2px solid var(--hover-color, #00ccb4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove o outline padrão do foco para manter o design limpo */
+.card-link:focus {
+    outline: none;
+}
+.card-link:focus .card {
+    box-shadow: 0 0 0 3px rgba(0, 204, 180, 0.3);
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Doctoralia</div>
+        <div class="login">
+            <span>Você já possui uma conta?</span>
+            <button>Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <h1>Crie uma conta gratuita</h1>
+        <div class="card-container">
+            <!-- Card do Paciente - todo clicável sem estilo de link visitado -->
+            <a href="lgpd.html" class="card-link" style="--hover-color: #00ccb4;">
+                <div class="card">
+                    <img src="patient.svg" alt="Paciente" />
+                    <h2>Sou um paciente</h2>
+                    <p>Encontre um médico e marque uma consulta.</p>
+                </div>
+            </a>
+            
+            <!-- Cards restantes (não clicáveis) -->
+            <div class="card">
+                <img src="doctor.svg" alt="Especialista" />
+                <h2>Eu sou especialista em saúde</h2>
+                <p>Faça com que os pacientes o conheçam, confiem e marquem consulta com você.</p>
+            </div>
+            <div class="card">
+                <img src="facility.svg" alt="Administrador" />
+                <h2>Sou administrador de uma clínica</h2>
+                <p>Dê visibilidade extra à sua clínica com o seu próprio perfil.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

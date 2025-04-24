@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Privacidade | Doctoralia</title>
+    <style>
+        /* FONTE E CORES DO DOCTORALIA */
+        :root {
+            --doctoralia-blue: #00C4CC;
+            --doctoralia-darkblue: #0c3141;
+            --doctoralia-gray: #0c1f27;
+            --doctoralia-lightgray: #F8F9FA;
+            --doctoralia-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--doctoralia-lightgray);
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* HEADER (ESTILO DOCTORALIA) */
+        .header {
+            background-color: var(--doctoralia-white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 16px 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: var(--doctoralia-blue);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* FORMULÁRIO (CARD ESTILO DOCTORALIA) */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--doctoralia-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            padding: 32px;
+        }
+
+        .form-title {
+            color: var(--doctoralia-blue);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .lgpd-explanation {
+            background-color: #F0FAFB;
+            border-left: 4px solid var(--doctoralia-blue);
+            padding: 16px;
+            margin-bottom: 24px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .lgpd-explanation p {
+            margin-bottom: 12px;
+            color: var(--doctoralia-gray);
+            font-size: 15px;
+        }
+
+        .lgpd-explanation strong {
+            color: var(--doctoralia-darkblue);
+        }
+
+        .checkbox-container {
+            margin: 24px 0;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-label input {
+            margin-right: 12px;
+            margin-top: 3px;
+            accent-color: var(--doctoralia-blue);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--doctoralia-blue);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--doctoralia-darkblue);
+        }
+
+        /* FOOTER (ESTILO DOCTORALIA) */
+        .footer {
+            background-color: var(--doctoralia-white);
+            padding: 24px 0;
+            margin-top: 40px;
+            border-top: 1px solid #EAECEF;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            color: var(--doctoralia-gray);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Doctoralia</a>
+            <nav>
+                <a href="#" style="color: var(--doctoralia-blue); font-weight: 500;">Entrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FORMULÁRIO LGPD -->
+    <main>
+        <div class="form-container">
+            <h1 class="form-title">Termos de Privacidade</h1>
+
+            <div class="lgpd-explanation">
+                <p>Na <strong>Doctoralia</strong>, valorizamos sua privacidade e transparência. Por isso, explicamos
+                    como usaremos seus dados:</p>
+
+                <p><strong>Seus dados serão utilizados apenas para:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 12px; color: var(--doctoralia-gray);">
+                    <li>Melhorar sua experiência de navegação no site</li>
+                    <li>Fazer adaptações técnicas para otimizar o acesso</li>
+                    <li>Personalizar conteúdos conforme suas necessidades</li>
+                </ul>
+
+                <p><strong>Não compartilhamos seus dados com terceiros</strong>. Você pode solicitar a exclusão a
+                    qualquer momento em <strong>Suporte@doctoralia.com</strong>.</p>
+            </div>
+
+            <div class="checkbox-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" required>
+                    <span>Eu li e compreendi como meus dados serão utilizados, conforme explicado acima.</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox">
+                    <span>Desejo receber informações sobre melhorias no site (opcional).</span>
+                </label>
+            </div>
+
+            <div class="submit-container">
+                <a href="acessibilidade.html" class="submit-link">
+                    <button type="button" class="submit-btn">Confirmar e Continuar</button>
+                </a>
+            </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2025 Doctoralia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
